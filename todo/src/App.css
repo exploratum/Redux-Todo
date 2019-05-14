@@ -57,7 +57,11 @@ form {
   margin-left: 20px;
 }
 
-form > input {
+form > fieldset > input {
   margin-left: 10px;
   width: 60%;
+}
+
+.delete-completed {
+  margin-top: 20px;
 }

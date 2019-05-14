@@ -1,5 +1,5 @@
 
-import {ADD, TOGGLE, DELETE} from '../actions'
+import {ADD, TOGGLE, DELETE, DELETEALLCOMPLETED} from '../actions'
 
 const initialState = {
     todos:[{value: "Call for dental appointment", completed: false}]
@@ -33,6 +33,12 @@ export default (state=initialState, action) => {
         return {
             todos: state.todos.filter( todo => todo.value !== action.payload)
         }
+
+        case DELETEALLCOMPLETED:
+            return {
+                todos: state.todos.filter(todo => !todo.completed)
+            }
+
 
         default:
             return state

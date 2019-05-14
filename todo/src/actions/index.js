@@ -6,7 +6,12 @@ export const deleteTodo = (value) => {
     }
 }
 
-//export const DELETEALLCOMPLETED
+export const DELETEALLCOMPLETED = 'DELETEALLCOMPLETED'
+export const deleteAllCompleted = () => {
+    return {
+        type: DELETEALLCOMPLETED
+    }
+}
 
 export const ADD = 'ADD';
 export const addTodo = (todo) => {

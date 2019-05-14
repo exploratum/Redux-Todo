@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { deleteTodo, addTodo } from '../actions'
+import { deleteTodo, addTodo, deleteAllCompleted } from '../actions'
 import Todo from './Todo'
 
 
@@ -25,6 +25,12 @@ class Todos extends React.Component {
         this.props.addTodo(this.state)
         this.setState({value: ''})
         }
+    
+    handleDeleteCompleted = (event) => {
+        event.preventDefault();
+        this.props.deleteAllCompleted();
+
+    }
 
     render() {
         return (
@@ -33,13 +39,18 @@ class Todos extends React.Component {
                     {this.props.todos.map(todo => <Todo todo={todo} key={todo.value} />)}
                 </div>
                 <form onSubmit={this.handleSubmit} >
-                    add todo: 
-                    <input type="text" 
-                        value={this.state.value} 
-                        onChange={this.handleInput}
-                    />
+                    <fieldset>
+                        add todo: 
+                        <input type="text" 
+                            value={this.state.value} 
+                            onChange={this.handleInput}
+                        />
 
-                    <button>submit</button>
+                        <button>submit</button>
+                    </fieldset>
+                    
+                    <button onClick={this.handleDeleteCompleted} className='delete-completed'>Delete All Completed</button>
+    
                 </form>
             </>
         )   
@@ -52,4 +63,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps, {deleteTodo, addTodo}) (Todos)
+export default connect(mapStateToProps, {deleteTodo, addTodo, deleteAllCompleted}) (Todos)
