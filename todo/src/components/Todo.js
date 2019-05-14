@@ -32,11 +32,5 @@ const Todo = (props) => {
     )
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//         todos: state.todos
-//     }
-// }
-
 
 export default connect(null, {toggleComplete, deleteTodo}) (Todo);

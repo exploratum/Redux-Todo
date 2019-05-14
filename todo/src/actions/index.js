@@ -6,6 +6,8 @@ export const deleteTodo = (value) => {
     }
 }
 
+//export const DELETEALLCOMPLETED
+
 export const ADD = 'ADD';
 export const addTodo = (todo) => {
     return {
@@ -21,3 +23,5 @@ export const toggleComplete = (value) => {
         payload: value
     }
 }
+
+
