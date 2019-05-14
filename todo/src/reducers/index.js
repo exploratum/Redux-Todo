@@ -1,17 +1,20 @@
 
-import {ADD, TOGGLE} from '../actions'
+import {ADD, TOGGLE, DELETE} from '../actions'
 
 const initialState = {
-    todos:[]
+    todos:[{value: "Call for dental appointment", completed: false}]
 }
 
 export default (state=initialState, action) => {
     switch(action.type) {
+
+        //Add new todo
         case ADD: 
             return {
                 todos:[...state.todos, action.payload]
             }
-
+        
+        // Toggle targeted todo completed status 
         case TOGGLE:
             return {
                 todos: state.todos.map( todo => {
@@ -25,7 +28,11 @@ export default (state=initialState, action) => {
                         
                     )
             }
-        
+
+        case DELETE:
+        return {
+            todos: state.todos.filter( todo => todo.value !== action.payload)
+        }
 
         default:
             return state

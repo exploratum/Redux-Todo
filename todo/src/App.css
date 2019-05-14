@@ -11,6 +11,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 20px;
 }
 
 .App-link {
@@ -18,9 +19,36 @@
 }
 
 .todo {
-  border: 1px solid red;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  background: rgb(107, 221, 178);
+
 }
+
+.todo > p {
+  width: 75%;
+  margin-left: 10px;
+}
+
+.todo > button {
+  height: 30px;
+}
+
+.todos {
+  margin-bottom: 30px;
+}
+
 
 .strike-through {
   text-decoration: line-through;
+}
+
+form {
+  margin-left: 20px;
+}
+
+form > input {
+  margin-left: 10px;
+  width: 60%;
 }

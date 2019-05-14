@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleComplete } from '../actions'
+import { toggleComplete, deleteTodo } from '../actions'
 
 
 
 const Todo = (props) => {
 
-    //Check the completed state in the store and strike through accordingly
+    //Check the completed state in the store and strike through todo accordingly
     const lineThrough = () => {
         if (props.todo.completed)
             return 'strike-through';
@@ -19,9 +19,15 @@ const Todo = (props) => {
         props.toggleComplete(props.todo.value)
     }
 
+    const deleteTodo = (event) => {
+        event.preventDefault();
+        props.deleteTodo(props.todo.value);
+    }
+
     return (
-        <div className={`todo ${lineThrough()}`} onClick={handleClick} >
-            {props.todo.value}
+        <div className='todo' onClick={handleClick} >
+            <p className={`${lineThrough()}`}>{props.todo.value}</p>
+            <button onClick={deleteTodo}>Delete</button>
         </div>
     )
 }
@@ -33,4 +39,4 @@ const Todo = (props) => {
 // }
 
 
-export default connect(null, {toggleComplete}) (Todo);
+export default connect(null, {toggleComplete, deleteTodo}) (Todo);
