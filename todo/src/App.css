@@ -1,0 +1,67 @@
+body {
+  width: 100%;
+  max-width: 800px;
+}
+
+.App {
+  text-align: center;
+  
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.todo {
+  border: 1px solid grey;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: rgb(107, 221, 178);
+
+}
+
+.todo > p {
+  width: 75%;
+  margin-left: 10px;
+}
+
+.todo > button {
+  height: 30px;
+}
+
+.todos {
+  margin-bottom: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.strike-through {
+  text-decoration: line-through;
+}
+
+form {
+  margin-left: 20px;
+}
+
+form > fieldset > input {
+  margin-left: 10px;
+  width: 60%;
+}
+
+.delete-completed {
+  margin-top: 20px;
+}
